@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bimbel Pelita — Bimbingan Belajar SD, SMP, SMA | Kelas Kecil &amp; Try Out Rutin</title>
+  <meta name="description" content="Bimbel Pelita: bimbingan belajar SD, SMP, SMA dengan kelas kecil (maks. 8 siswa), pengajar berpengalaman, try out rutin, dan laporan bulanan ke orang tua. Daftar kelas via WhatsApp." />
+  <meta property="og:title" content="Bimbel Pelita — Belajar seru, nilai pasti naik" />
+  <meta property="og:description" content="Kelas kecil maks. 8 siswa, pengajar berpengalaman, try out rutin, dan laporan bulanan ke orang tua. Daftar kelas SD, SMP, SMA via WhatsApp." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./shared/base.css" />
+  <link rel="stylesheet" href="site.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="site-nav"></div>
+
+  <main id="konten">
+    <section id="beranda" class="hero" aria-label="Beranda">
+      <div class="wrap hero-inner" id="hero-body"></div>
+    </section>
+
+    <section id="program" class="section" aria-label="Program kelas">
+      <div class="wrap">
+        <div id="head-program"></div>
+        <div id="body-program" class="grid gap-6 md:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <section id="keunggulan" class="section section-alt" aria-label="Keunggulan">
+      <div class="wrap">
+        <div id="head-keunggulan"></div>
+        <div id="body-keunggulan" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <section id="jadwal" class="section" aria-label="Jadwal kelas">
+      <div class="wrap">
+        <div id="head-jadwal"></div>
+        <div id="body-jadwal"></div>
+      </div>
+    </section>
+
+    <section id="testimoni" class="section section-alt" aria-label="Testimoni orang tua">
+      <div class="wrap">
+        <div id="head-testimoni"></div>
+        <div id="body-testimoni" class="grid gap-6 md:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <section id="faq" class="section" aria-label="Pertanyaan yang sering ditanyakan">
+      <div class="wrap faq-narrow">
+        <div id="head-faq"></div>
+        <div id="body-faq" data-faq></div>
+      </div>
+    </section>
+
+    <section id="kontak" class="section section-alt" aria-label="Kontak dan lokasi">
+      <div class="wrap">
+        <div id="head-kontak"></div>
+        <div id="body-kontak"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <p id="content-notice" class="wrap content-notice" role="status" hidden></p>
+
+  <noscript>
+    <p class="wrap noscript-note">Halaman ini membutuhkan JavaScript untuk menampilkan konten. Aktifkan JavaScript, lalu muat ulang.</p>
+  </noscript>
+
+  <script type="module" src="site.js"></script>
+</body>
+</html>

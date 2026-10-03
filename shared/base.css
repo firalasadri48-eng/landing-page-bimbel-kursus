@@ -1,0 +1,193 @@
+/* ============================================================
+   shared/base.css — fondasi dipakai semua website landing-pages/
+   Pola token: tiap website menimpa variabel di :root melalui
+   site.css-nya sendiri. Jangan menulis warna/font mentah di sini
+   selain nilai cadangan (fallback) yang netral.
+   ============================================================ */
+
+:root {
+  /* Token global — TIMPA per website di site.css */
+  --font-heading: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-bg: #ffffff;
+  --color-surface: #f6f5f2;
+  --color-ink: #1c1b18;
+  --color-muted: #6b6963;
+  --color-line: #e3e0d8;
+  --color-accent: #b3541e;
+  --color-accent-ink: #ffffff;
+  --color-accent-soft: #f7e8da;
+
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 10px 34px rgba(28, 27, 24, 0.08);
+
+  --wrap: min(1180px, calc(100% - 40px));
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* ---- Aksesibilitas: fokus keyboard selalu terlihat ---- */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---- Tautan lewati (skip link) ---- */
+.skip-link {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 200;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: var(--color-bg);
+  transform: translateY(-160%);
+  text-decoration: none;
+  font-weight: 600;
+}
+.skip-link:focus {
+  transform: none;
+}
+
+/* ---- Seleksi teks ---- */
+::selection {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+
+/* ---- Hormati prefers-reduced-motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---- Pembungkus konten standar ---- */
+.wrap {
+  width: var(--wrap);
+  margin-inline: auto;
+}
+
+/* ---- Kepala seksi bernomor: "01 / PROGRAM" ---- */
+.section-head {
+  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+}
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+  margin: 0 0 0.9rem;
+}
+.section-title {
+  font-size: clamp(1.9rem, 4.4vw, 3.2rem);
+  max-width: 22ch;
+}
+.section-desc {
+  margin-top: 0.9rem;
+  color: var(--color-muted);
+  max-width: 62ch;
+}
+
+/* ---- Tombol dasar ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px; /* area ketuk >= 44px */
+  padding: 0.8rem 1.25rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    transform 0.15s ease;
+}
+.btn:active {
+  transform: translateY(1px);
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+}
+.btn-primary:hover {
+  filter: brightness(0.94);
+}
+.btn-outline {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+  background: transparent;
+}
+.btn-outline:hover {
+  background: var(--color-surface);
+}
+
+/* ---- Kartu dasar ---- */
+.card {
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+/* ---- Utilitas jarak seksi ---- */
+.section {
+  padding-block: clamp(3.5rem, 9vw, 7rem);
+}
